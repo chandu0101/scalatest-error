@@ -19,11 +19,11 @@ jsDependencies += RuntimeDOM
 jsEnv in Test := new PhantomJS2Env(scalaJSPhantomJSClassLoader.value, addArgs = Seq("--web-security=no"))
 
 
-libraryDependencies += "org.scalatest" %%% "scalatest" % scalatestVersion % Test
-
-libraryDependencies += "org.scala-lang.modules" %% "scala-async" % scalaAsyncVersion
-
-libraryDependencies += "com.github.japgolly.scalajs-react" %%% "core" % scalajsReactVersion
+//libraryDependencies += "org.scalatest" %%% "scalatest" % scalatestVersion % Test
+//
+//libraryDependencies += "org.scala-lang.modules" %% "scala-async" % scalaAsyncVersion
+//
+//libraryDependencies += "com.github.japgolly.scalajs-react" %%% "core" % scalajsReactVersion
 
 //utest
 
