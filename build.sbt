@@ -4,7 +4,6 @@ import sbt.Keys._
 import sbt._
 
 enablePlugins(ScalaJSPlugin)
-enablePlugins(ScalaJSBundlerPlugin)
 
 version := "0.0.1"
 
