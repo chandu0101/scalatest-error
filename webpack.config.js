@@ -8,11 +8,10 @@ var NODE_ENV = process.env.NODE_ENV;
 module.exports = {
 
     entry: {
-        mainpage: './scalatesterror-opt.js'
+        mainpage: './assets/scalajs-output-launcher.js'
     },
     output: {
         path: __dirname + '/assets',
-        publicPath: "/assets/",
         filename: '[name]-bundle.js'
     },
     plugins: [
@@ -23,6 +22,12 @@ module.exports = {
             }
         })
     ],
+    externals: {
+      'cheerio': 'window',
+      'react/addons': true,
+      'react/lib/ExecutionEnvironment': true,
+      'react/lib/ReactContext': true
+    },
     module: {
         loaders: [
 
