@@ -1,20 +1,21 @@
-import org.scalajs.core.tools.io.{
-  AtomicWritableFileVirtualJSFile,
-  FileVirtualJSFile,
-  VirtualJSFile
-}
-import org.scalajs.sbtplugin.ScalaJSPlugin
-import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport._
-import sbt.Keys._
-import sbt._
+
 
 enablePlugins(ScalaJSPlugin)
 
 version := "0.0.1"
 
-scalaVersion := "2.11.8"
+scalaVersion := "2.11.11"
 
-scalaJSModuleKind := ModuleKind.CommonJSModule
+//deps
+
+libraryDependencies ++= Seq(
+  "org.scala-lang" % "scala-reflect" % scalaVersion.value % Provided,
+  "org.scalameta" %% "scalameta" % "1.8.0" % Provided)
+
+addCompilerPlugin(
+  "org.scalameta" % "paradise" % "3.0.0-M9" cross CrossVersion.full)
+
+
 
 /** Custom tasks to generate launcher file in  CommonJSModule mode   */
 val SJS_OUTPUT_PATH = "assets/scalajs-output.js"
